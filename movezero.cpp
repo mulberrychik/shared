@@ -41,29 +41,45 @@ void movezero(int arr[],int low , int high){
     }
 }
 
-void optmvzero(int arr[],int n){
-    int i = 1,j =0;
-    while(i != n-1 && j != n-1){
-        if(arr[i]!= 0 && arr[j]!=0);
-        j++;
-        i++;
+// void optmvzero(int arr[],int n){
+//     int i = 1,j =0;
+//     while(i != n-1 && j != n-1){
+//         if(arr[i]!= 0 && arr[j]!=0);
+//         j++;
+//         i++;
 
-        if(arr[i] == 0 && arr[j] != 0){
-        j = i;
-        i++;}
+//         if(arr[i] == 0 && arr[j] != 0){
+//         j = i;
+//         i++;}
 
-        if(arr[i]!=0 && arr[j] == 0){
-            swap(arr[i],arr[j]);
-            j++;
+//         if(arr[i]!=0 && arr[j] == 0){
+//             swap(arr[i],arr[j]);
+//             j++;
 
-        if(arr[i]==0 && arr[j] == 0){
-            i++;
-        }
+//         if(arr[i]==0 && arr[j] == 0){
+//             i++;
+//         }
         
-        }
+//         }
 
+//     }
+// }
+
+void mvzero(int arr[],int n){
+    int i = 1;
+    int j = 0;
+    for(;i< n;i++){
+        if(arr[j]==0){
+            if(arr[i]!=0){
+                swap(arr[i],arr[j]);
+                j++;
+            }
+        }
+        else j++;
     }
 }
+
+
 
 int main()
 {
@@ -74,7 +90,8 @@ int main()
         cin >> arr[i];
     }
 //    movezero(arr ,0, n);
-    optmvzero(arr , n);
+//    optmvzero(arr , n);
+    mvzero(arr,n);
     for(int i = 0;i<n;i++){
         cout << arr[i] <<" ";
     }
