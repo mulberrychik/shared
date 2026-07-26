@@ -1,0 +1,43 @@
+
+        int high = nums.size()-1 ;
+        int low = 0;
+        while (low <= high){
+            if (nums[mid] > target) high = mid - 1;
+            else if (nums[mid] < target) low = mid + 1;
+            else return mid;
+        }
+
+
+int lb(vector<int> &nums, int num){
+    int low = 0,high = nums.size() - 1;
+    int ans = nums.size();
+    
+    while(low <= high){
+        int mid = low + (high - low)/2;
+        if (nums[mid] >= num){
+            high = mid - 1 ;
+            ans = mid;
+        }
+        
+        else low = mid + 1;od
+    }
+
+    return ans;
+}
+
+int ub(vector<int> &nums, int num){
+    int low = 0,high = nums.size() - 1;
+    int ans = nums.size();
+    while (low <= high){
+        int mid = low + (high - low)/2;
+
+        if (nums[mid] > num){
+            high = mid - 1;
+            ans = mid;
+        }
+
+        else low = mid + 1;
+    }
+
+    return ans;
+}

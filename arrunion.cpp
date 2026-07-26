@@ -20,14 +20,14 @@ void union1(int arr[],int p,int arr1[],int n1,vector<int> & v){
     }
 
     while(m < p){
-        if(v.back() != arr[m] || v.empty()){
+        if( v.empty() || v.back() != arr[m]){
             v.emplace_back(arr[m]);
         }
         m++;
     }
     
     while(n < n1){
-        if(v.back() != arr1[n] || v.empty()){
+        if( || v.empty() || v.back() != arr1[n]){
             v.emplace_back(arr1[n]);
         }
         n++;
@@ -40,16 +40,14 @@ void inter(int arr[],int p,int arr1[],int n1,vector<int> & v){
     while (m < p && n< n1){
         if (arr[m] > arr1[n]) n++;
         else if (arr[m] == arr1[n]){
-            if(v.empty() || v.back() < arr[m]){
+            if(v.empty() || v.back() <= arr[m]){
                 v.emplace_back(arr[m]);
+                }
                 m++;
                 n++;
             }
         else m++;
-        }
     }
-
-
 }
 
 int main()
