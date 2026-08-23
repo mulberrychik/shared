@@ -69,3 +69,13 @@ int ub(vector<int> &nums, int num){
         }
 
         return 0;
+
+
+        //as only one is sigletime the total will always be some odd num, and mid will always go to the centre 
+
+            //check if right is same as mid or left 
+
+            //left
+
+
+            

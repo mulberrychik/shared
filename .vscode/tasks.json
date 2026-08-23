@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run C++ with file I/O",
+      "type": "shell",
+      "command": "g++ ${fileBasename} -Wall -Wextra -std=c++17 -o ${fileBasenameNoExtension} && ${fileBasenameNoExtension}.exe < input.txt > output.txt",
+      "options": {
+        "cwd": "${fileDirname}",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
